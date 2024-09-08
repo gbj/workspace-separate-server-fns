@@ -1,0 +1,13 @@
+[package]
+name = "api"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+leptos = "0.6"
+# this crate is optional and will only be compiled for the server
+rand = { version = "0.8", optional = true }
+
+[features]
+hydrate = ["leptos/hydrate"]
+ssr = ["leptos/ssr", "dep:rand"]
